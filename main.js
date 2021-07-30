@@ -214,6 +214,7 @@
         const messageToDo = document.querySelector('.message__todo_number');
         messageToDo.innerHTML = `operated behind if delToDo <br>
             targetBtnId: ${targetBtn.dataset.targetId}<br>
+            targetList: ${targetList}<br>
             targetListId: ${targetList.id}
         `;
         if (targetBtn.dataset.targetId == targetList.id) {
