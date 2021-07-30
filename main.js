@@ -180,6 +180,8 @@
             const deleteTarget = event.target;
             const deleteList = deleteTarget.parentNode.parentNode;
             deleteToDo(deleteTarget, deleteList)
+            const title = document.querySelector('.title');
+            title.textContent = `operated checkOrDel`;
         } else if (event.path[0].className == 'checkbox') { // click checkbox
             const checkTarget = event.target;
             const checkList = checkTarget.parentNode;
@@ -191,13 +193,15 @@
     // relate the 'checkOrDel' function.
     function deleteToDo(targetBtn, targetList) {
         if (targetBtn.dataset.targetId == targetList.id) {
+            const title = document.querySelector('.title');
+            title.textContent = `operated deleteToDo`;
             lists.removeChild(targetList);
             const updateToDos = toDos.filter(toDo => {
                 return toDo.id !== parseInt(targetList.id);
             });
             toDos = updateToDos;
             saveToDos(TODOS_LS, toDos);
-            location.reload();
+            // location.reload();
         }
     }
 
@@ -216,12 +220,15 @@
         const btnCompletedList = document.querySelector('.btn-del-completed_list');
         const nameForm = document.querySelector('.form-user_name');
 
+        addEventListener('touchstart', event => console.log(event.type));
+
         // for mobile
         if (document.querySelector('li')) {
-            const btnDel = document.querySelector('.btn-del');
             const checkbox = document.querySelector('.checkbox');
-            const deleteEventTouch = btnDel.addEventListener('touchstart', event => checkOrDel(event));
+            const btnDel = document.querySelector('.btn-del');
             const checkedTouch = checkbox.addEventListener('touchstart', event => handleCheckedList(event));
+            const deleteEventTouch = btnDel.addEventListener('touchstart', event => checkOrDel(event));
+            btnDel.addEventListener('touchstart', event => console.log(event.type));
         }
 
         // event handler
