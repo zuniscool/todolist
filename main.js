@@ -1,6 +1,7 @@
 (function () {
     'use strict'
     const input = document.querySelector('.modal__input');
+    const formInput = document.querySelector('.form__input');
     const lists = document.querySelector('.lists');
     
     const TODOS_LS = 'toDos';
@@ -21,8 +22,8 @@
     // submit User Name.
     // relate the function 'loadUserName'.
     function userNameInput() {
-        const nameValue = document.querySelector('.form__input').value;
-        localStorage.setItem(USER_NAME_LS, nameValue);
+        const currentValue = formInput.value;
+        localStorage.setItem(USER_NAME_LS, currentValue);
     }
 
     // load 'saved user name' from Local Storage.
