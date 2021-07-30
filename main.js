@@ -215,21 +215,6 @@
         const btnCompletedList = document.querySelector('.btn-del-completed_list');
         const nameForm = document.querySelector('.form-user_name');
 
-        // for mobile
-        if (document.querySelector('li')) {
-            const checkbox = document.querySelector('.checkbox');
-            const btnDel = document.querySelector('.btn-del');
-            // const checkedTouch = checkbox.addEventListener('touchstart', event => handleCheckedList(event));
-            // const deleteEventTouch = btnDel.addEventListener('touchstart', event => checkOrDel(event));
-            const checkedTouch = checkbox.addEventListener('touchstart', event => test(event));
-            const deleteEventTouch = btnDel.addEventListener('touchstart', event => test(event));
-        }
-
-        function test(event) {
-            const title = document.querySelector('.title');
-            title.textContent = `operated: ${event.type}`;
-        }
-
         // event handler
         const complListDel = btnCompletedList.addEventListener('click', completedListDelete);
         const deleteEvent = addEventListener('click', event => checkOrDel(event));
