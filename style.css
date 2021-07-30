@@ -177,6 +177,27 @@ body {
         width: 30rem;
     }
 
+    .title {
+        font-size: 2rem;
+    }
+    
+    .message__greeting_user {
+        font-size: 1.4rem;
+    }
+    
+    .message__todo_number {
+        font-size: 0.4rem;
+    }
+
+    .btn-del-completed_list {
+        font-size: 1rem;
+    }
+
+    .lists {
+        padding: 0;
+        font-size: 0.8rem;
+    }
+
     .modal {
         width: 24rem;
         height: 13rem;
