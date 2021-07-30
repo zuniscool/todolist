@@ -181,14 +181,13 @@
         const parentId1 = event.target.parentNode.id;
 
         if (targetId1 == parentId1) {
+            const deleteTarget = event.target;
             if (event.taregt.nodeName == 'BUTTON') {
-                const deleteTarget = event.target;
-                const deleteList = event.target.parentNode;
-                deleteToDo(deleteTarget, deleteList);
+                const deletebuttonList = event.target.parentNode;
+                deleteToDo(deleteTarget, deletebuttonList);
             } else if (event.taregt.nodeName == 'I') {
-                const deleteTarget = event.target;
-                const deleteList = event.target.parentNode.parentNode;
-                deleteToDo(deleteTarget, deleteList);
+                const deleteiList = event.target.parentNode;
+                deleteToDo(deleteTarget, deleteiList);
             }
         }
         // for mobile
