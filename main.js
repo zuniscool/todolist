@@ -191,7 +191,7 @@
         if (targetId1 == parentId1) {
             messageGreeting.textContent = `operated1`;
             const deleteTarget = event.target;
-            const deleteList = event.target.parentNode.parentNode;
+            const deleteList = event.target.parentNode;
             deleteToDo(deleteTarget, deleteList);
         }
 
