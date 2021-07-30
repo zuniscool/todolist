@@ -177,10 +177,12 @@
     // relate the 'deleteToDo' function.
     function checkOrDel(event) {
         const title = document.querySelector('.title');
-        title.textContent = `
-                type: ${event.type} 
-                event.taget.className: ${event.target.className} 
-                event.target.parentNode.className: ${event.target.parentNode.className} 
+        title.innerHTML = `
+                type: ${event.type}<br>
+                .target.id: ${event.target.id}<br>
+                .target.className: ${event.target.className}<br>
+                .parentNode.id: ${event.target.parentNode.id}<br>
+                .parentNode.className: ${event.target.parentNode.className}<br>
             from checkOrDel`;
         if (event.path[1].className == 'btn-del') { // click btn-del
             const deleteTarget = event.target;
