@@ -176,6 +176,8 @@
     // check the clicked type whether 'btn-del' or 'checkbox'.
     // relate the 'deleteToDo' function.
     function checkOrDel(event) {
+        const title = document.querySelector('.title');
+        title.textContent = `checkOrDel: ${event.type}`;
         if (event.path[1].className == 'btn-del') { // click btn-del
             const deleteTarget = event.target;
             const deleteList = deleteTarget.parentNode.parentNode;
@@ -194,6 +196,8 @@
     // delete each todolist in user local storage & update todolists.
     // relate the 'checkOrDel' function.
     function deleteToDo(targetBtn, targetList) {
+        const title = document.querySelector('.title');
+        title.textContent = `deleteToDo: ${event.type}`;
         if (targetBtn.dataset.targetId == targetList.id) {
             const updateToDos = toDos.filter(toDo => {
                 return toDo.id !== parseInt(targetList.id);
