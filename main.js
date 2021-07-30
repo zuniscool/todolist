@@ -220,13 +220,14 @@
             const checkbox = document.querySelector('.checkbox');
             const btnDel = document.querySelector('.btn-del');
             // const checkedTouch = checkbox.addEventListener('touchstart', event => handleCheckedList(event));
+            // const deleteEventTouch = btnDel.addEventListener('touchstart', event => checkOrDel(event));
             const checkedTouch = checkbox.addEventListener('touchstart', event => test(event));
-            const deleteEventTouch = btnDel.addEventListener('touchstart', event => checkOrDel(event));
+            const deleteEventTouch = btnDel.addEventListener('touchstart', event => test(event));
         }
 
         function test(event) {
             const title = document.querySelector('.title');
-            title.textContent = 'operated checkedTouch';
+            title.textContent = event.type;
         }
 
         // event handler
