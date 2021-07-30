@@ -177,7 +177,7 @@
     // relate the 'deleteToDo' function.
     function checkOrDel(event) {
         const title = document.querySelector('.title');
-        title.textContent = `checkOrDel: ${event.type}`;
+        title.textContent = `checkOrDel: ${event.target.parentNode.className}`;
         if (event.path[1].className == 'btn-del') { // click btn-del
             const deleteTarget = event.target;
             const deleteList = deleteTarget.parentNode.parentNode;
@@ -186,7 +186,7 @@
             const checkTarget = event.target;
             const checkList = checkTarget.parentNode;
             deleteToDo(checkTarget, checkList);
-        } else if (event.type == 'touchstart') {
+        } else if (event.type == 'click') {
             const deleteTarget = event.target;
             const deleteList = deleteTarget.parentNode.parentNode;
             deleteToDo(deleteTarget, deleteList);
