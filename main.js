@@ -211,13 +211,13 @@
     // delete each todolist in user local storage & update todolists.
     // relate the 'checkOrDel' function.
     function deleteToDo(targetBtn, targetList) {
-        // const messageToDo = document.querySelector('.message__todo_number');
-        // messageToDo.innerHTML = `operated behind if delToDo <br>
-        //     targetBtn: ${targetBtn}<br>
-        //     targetBtnId: ${targetBtn.dataset.targetId}<br>
-        //     targetList: ${targetList}<br>
-        //     targetListId: ${targetList.id}
-        // `;
+        const messageToDo = document.querySelector('.message__todo_number');
+        messageToDo.innerHTML = `operated behind if delToDo <br>
+            targetBtn: ${targetBtn}<br>
+            targetBtnId: ${targetBtn.dataset.targetId}<br>
+            targetList: ${targetList}<br>
+            targetListId: ${targetList.id}
+        `;
         if (targetBtn.dataset.targetId == targetList.id) {
             messageToDo.textContent = `operated delToDo`;
             const updateToDos = toDos.filter(toDo => {
