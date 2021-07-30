@@ -137,7 +137,7 @@
             return input.value = '';
         }
     
-        if (submitKey == 'Enter' || submitBtn == 1) {
+        if (submitKey == 'Enter' || submitBtn == 1 || event.type == 'touchstart') {
             onAdd(inputedText, TODOS_LS, toDos);
             checkNumber();
             onOffModal();
@@ -218,7 +218,9 @@
         // event handler
         const complListDel = btnCompletedList.addEventListener('click', completedListDelete);
         const deleteEvent = addEventListener('click', event => checkOrDel(event));
+        const deleteTouch = addEventListener('touchstart', event => checkOrDel(event));
         const btnInput = btnSumbit.addEventListener('click', event => submitToDos(event));
+        const btnTouch = btnSumbit.addEventListener('touchstart', event => submitToDos(event));
         const keyInput = addEventListener('keydown', event => submitToDos(event));
         const checked = addEventListener('click', event => handleCheckedList(event));
         const submitUserName = nameForm.addEventListener('submit', userNameInput);
