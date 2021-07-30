@@ -182,15 +182,8 @@
 
         if (targetId1 == parentId1) {
             const deleteTarget = event.target;
-            const deletebuttonList = event.target.parentNode;
-            deleteToDo(deleteTarget, deletebuttonList);
-            // if (event.taregt.nodeName == 'BUTTON') {
-            //     const deletebuttonList = event.target.parentNode;
-            //     deleteToDo(deleteTarget, deletebuttonList);
-            // } else if (event.taregt.nodeName == 'I') {
-            //     const deleteiList = event.target.parentNode;
-            //     deleteToDo(deleteTarget, deleteiList);
-            // }
+            const deleteList = event.target.parentNode;
+            deleteToDo(deleteTarget, deleteList);
         }
         // for mobile
 
@@ -214,7 +207,7 @@
             });
             toDos = updateToDos;
             saveToDos(TODOS_LS, toDos);
-            // location.reload();
+            location.reload();
         }
     }
 
