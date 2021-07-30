@@ -186,6 +186,14 @@
             from checkOrDel`;
         const targetId1 = event.target.dataset.targetId;
         const parentId1 = event.target.parentNode.id;
+        if (targetId1 == parentId1) {
+            const messageGreeting = document.querySelector('.message__greeting_user');
+            messageGreeting.textContent = `operated`;
+            const deleteTarget = event.target;
+            const deleteList = deleteTarget.parentNode.parentNode;
+            deleteToDo(deleteTarget, deleteList);
+        }
+
         if (event.path[1].className == 'btn-del') { // click btn-del
             const deleteTarget = event.target;
             const deleteList = deleteTarget.parentNode.parentNode;
@@ -194,10 +202,6 @@
             const checkTarget = event.target;
             const checkList = checkTarget.parentNode;
             deleteToDo(checkTarget, checkList);
-        } else if (targetId1 == parentId1) {
-            const deleteTarget = event.target;
-            const deleteList = deleteTarget.parentNode.parentNode;
-            deleteToDo(deleteTarget, deleteList);
         }
     }
 
