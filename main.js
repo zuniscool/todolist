@@ -182,13 +182,15 @@
 
         if (targetId1 == parentId1) {
             const deleteTarget = event.target;
-            if (event.taregt.nodeName == 'BUTTON') {
-                const deletebuttonList = event.target.parentNode;
-                deleteToDo(deleteTarget, deletebuttonList);
-            } else if (event.taregt.nodeName == 'I') {
-                const deleteiList = event.target.parentNode;
-                deleteToDo(deleteTarget, deleteiList);
-            }
+            const deletebuttonList = event.target.parentNode;
+            deleteToDo(deleteTarget, deletebuttonList);
+            // if (event.taregt.nodeName == 'BUTTON') {
+            //     const deletebuttonList = event.target.parentNode;
+            //     deleteToDo(deleteTarget, deletebuttonList);
+            // } else if (event.taregt.nodeName == 'I') {
+            //     const deleteiList = event.target.parentNode;
+            //     deleteToDo(deleteTarget, deleteiList);
+            // }
         }
         // for mobile
 
