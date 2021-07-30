@@ -227,7 +227,7 @@
 
         function test(event) {
             const title = document.querySelector('.title');
-            title.textContent = event.type;
+            title.textContent = `operated: ${event.type}`;
         }
 
         // event handler
