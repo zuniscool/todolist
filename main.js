@@ -100,7 +100,7 @@
         lists.innerHTML += `<li class="list" id=${targetId}>
             <input class="checkbox" type="checkbox" data-target-id=${targetId}>
             <span class="value">${value}</span>
-            <button class="btn-del">
+            <button class="btn-del" data-target-id=${targetId}>
                 <i class="fas fa-trash" data-target-id=${targetId}></i>
             </button>
         </li>`;
@@ -179,7 +179,7 @@
         const title = document.querySelector('.title');
         title.innerHTML = `
                 type: ${event.type}<br>
-                .target.id: ${event.target.id}<br>
+                .target.id: ${event.target.dataset.targetId}<br>
                 .target.className: ${event.target.className}<br>
                 .parentNode.id: ${event.target.parentNode.id}<br>
                 .parentNode.className: ${event.target.parentNode.className}<br>
@@ -202,8 +202,6 @@
     // delete each todolist in user local storage & update todolists.
     // relate the 'checkOrDel' function.
     function deleteToDo(targetBtn, targetList) {
-        const title = document.querySelector('.title');
-        title.textContent = `operated deleteToDo`;
         if (targetBtn.dataset.targetId == targetList.id) {
             const updateToDos = toDos.filter(toDo => {
                 return toDo.id !== parseInt(targetList.id);
