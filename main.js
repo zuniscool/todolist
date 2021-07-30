@@ -204,7 +204,7 @@
     function completedListDelete() {
         completedToDos = [];
         saveToDos(COMPLETED_TODOS_LS, completedToDos);
-        location.reload(false); // bring data from Cache;
+        location.reload(); // bring data from Cache;
     }
 
     // initialize
@@ -218,11 +218,12 @@
         // event handler
         const complListDel = btnCompletedList.addEventListener('click', completedListDelete);
         const deleteEvent = addEventListener('click', event => checkOrDel(event));
-        const deleteTouch = addEventListener('touchstart', event => checkOrDel(event));
+        const deleteEventTouch = addEventListener('touchstart', event => checkOrDel(event));
         const btnInput = btnSumbit.addEventListener('click', event => submitToDos(event));
-        const btnTouch = btnSumbit.addEventListener('touchstart', event => submitToDos(event));
+        const btnInputTouch = btnSumbit.addEventListener('touchstart', event => submitToDos(event));
         const keyInput = addEventListener('keydown', event => submitToDos(event));
         const checked = addEventListener('click', event => handleCheckedList(event));
+        const checkedTouch = addEventListener('touchstart', event => handleCheckedList(event));
         const submitUserName = nameForm.addEventListener('submit', userNameInput);
     
         // modal handler
