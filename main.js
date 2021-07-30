@@ -212,7 +212,10 @@
     // relate the 'checkOrDel' function.
     function deleteToDo(targetBtn, targetList) {
         const messageToDo = document.querySelector('.message__todo_number');
-        messageToDo.textContent = `operated behind if delToDo`;
+        messageToDo.innerHTML = `operated behind if delToDo <br>
+            targetBtnId: ${targetBtn.dataset.targetId}<br>
+            targetListId: ${targetList.id}
+        `;
         if (targetBtn.dataset.targetId == targetList.id) {
             messageToDo.textContent = `operated delToDo`;
             const updateToDos = toDos.filter(toDo => {
