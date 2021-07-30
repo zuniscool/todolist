@@ -191,7 +191,7 @@
         if (targetId1 == parentId1) {
             messageGreeting.textContent = `operated1`;
             const deleteTarget = event.target;
-            const deleteList = deleteTarget.parentNode.parentNode;
+            const deleteList = event.target.parentNode.parentNode;
             deleteToDo(deleteTarget, deleteList);
         }
 
@@ -213,6 +213,7 @@
     function deleteToDo(targetBtn, targetList) {
         const messageToDo = document.querySelector('.message__todo_number');
         messageToDo.innerHTML = `operated behind if delToDo <br>
+            targetBtn: ${targetBtn}<br>
             targetBtnId: ${targetBtn.dataset.targetId}<br>
             targetList: ${targetList}<br>
             targetListId: ${targetList.id}
