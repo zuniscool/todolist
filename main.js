@@ -119,6 +119,7 @@
             createList(targetListValue, checkbox.className);
             onAdd(targetListValue, COMPLETED_TODOS_LS, completedToDos);
             saveToDos(COMPLETED_TODOS_LS, completedToDos);
+            location.reload();
         }
     }
     
@@ -210,20 +211,22 @@
     // initialize
     function init() {
         const btnAdd = document.querySelector('.btn-add');
+        const btnDel = document.querySelector('.btn-del');
         const btnSumbit = document.querySelector('.modal__btn-submit');
         const btnCancel = document.querySelector('.btn-cancel');
         const btnCompletedList = document.querySelector('.btn-del-completed_list');
+        const checkbox = document.querySelector('.checkbox');
         const nameForm = document.querySelector('.form-user_name');
 
         // event handler
         const complListDel = btnCompletedList.addEventListener('click', completedListDelete);
         const deleteEvent = addEventListener('click', event => checkOrDel(event));
-        const deleteEventTouch = addEventListener('touchstart', event => checkOrDel(event));
+        const deleteEventTouch = btnDel.addEventListener('touchstart', event => checkOrDel(event));
         const btnInput = btnSumbit.addEventListener('click', event => submitToDos(event));
         const btnInputTouch = btnSumbit.addEventListener('touchstart', event => submitToDos(event));
         const keyInput = addEventListener('keydown', event => submitToDos(event));
         const checked = addEventListener('click', event => handleCheckedList(event));
-        const checkedTouch = addEventListener('touchstart', event => handleCheckedList(event));
+        const checkedTouch = checkbox.addEventListener('touchstart', event => handleCheckedList(event));
         const submitUserName = nameForm.addEventListener('submit', userNameInput);
     
         // modal handler
