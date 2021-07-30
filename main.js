@@ -179,11 +179,15 @@
         if (event.path[1].className == 'btn-del') { // click btn-del
             const deleteTarget = event.target;
             const deleteList = deleteTarget.parentNode.parentNode;
-            deleteToDo(deleteTarget, deleteList)
+            deleteToDo(deleteTarget, deleteList);
         } else if (event.path[0].className == 'checkbox') { // click checkbox
             const checkTarget = event.target;
             const checkList = checkTarget.parentNode;
             deleteToDo(checkTarget, checkList);
+        } else if (event.type == 'touchstart') {
+            const deleteTarget = event.target;
+            const deleteList = deleteTarget.parentNode.parentNode;
+            deleteToDo(deleteTarget, deleteList);
         }
     }
 
