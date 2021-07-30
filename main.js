@@ -176,32 +176,32 @@
     // check the clicked type whether 'btn-del' or 'checkbox'.
     // relate the 'deleteToDo' function.
     function checkOrDel(event) {
-        const title = document.querySelector('.title');
-        title.innerHTML = `
-                type: ${event.type}<br>
-                .target.id: ${event.target.dataset.targetId}<br>
-                .target.className: ${event.target.className}<br>
-                .parentNode.id: ${event.target.parentNode.id}<br>
-                .parentNode.className: ${event.target.parentNode.className}<br>
-            from checkOrDel`;
+        // const title = document.querySelector('.title');
+        // title.innerHTML = `
+        //         type: ${event.type}<br>
+        //         .target.id: ${event.target.dataset.targetId}<br>
+        //         .target.className: ${event.target.className}<br>
+        //         .parentNode.id: ${event.target.parentNode.id}<br>
+        //         .parentNode.className: ${event.target.parentNode.className}<br>
+        //     from checkOrDel`;
         const targetId1 = event.target.dataset.targetId;
         const parentId1 = event.target.parentNode.id;
 
-        const messageGreeting = document.querySelector('.message__greeting_user');
+        // const messageGreeting = document.querySelector('.message__greeting_user');
         if (targetId1 == parentId1) {
-            messageGreeting.textContent = `operated1`;
+            // messageGreeting.textContent = `operated1`;
             const deleteTarget = event.target;
             const deleteList = event.target.parentNode;
             deleteToDo(deleteTarget, deleteList);
         }
 
         if (event.path[1].className == 'btn-del') { // click btn-del
-            messageGreeting.textContent = `operated2`;
+            // messageGreeting.textContent = `operated2`;
             const deleteTarget = event.target;
             const deleteList = deleteTarget.parentNode.parentNode;
             deleteToDo(deleteTarget, deleteList);
         } else if (event.path[0].className == 'checkbox') { // click checkbox
-            messageGreeting.textContent = `operated3`;
+            // messageGreeting.textContent = `operated3`;
             const checkTarget = event.target;
             const checkList = checkTarget.parentNode;
             deleteToDo(checkTarget, checkList);
@@ -211,13 +211,13 @@
     // delete each todolist in user local storage & update todolists.
     // relate the 'checkOrDel' function.
     function deleteToDo(targetBtn, targetList) {
-        const messageToDo = document.querySelector('.message__todo_number');
-        messageToDo.innerHTML = `operated behind if delToDo <br>
-            targetBtn: ${targetBtn}<br>
-            targetBtnId: ${targetBtn.dataset.targetId}<br>
-            targetList: ${targetList}<br>
-            targetListId: ${targetList.id}
-        `;
+        // const messageToDo = document.querySelector('.message__todo_number');
+        // messageToDo.innerHTML = `operated behind if delToDo <br>
+        //     targetBtn: ${targetBtn}<br>
+        //     targetBtnId: ${targetBtn.dataset.targetId}<br>
+        //     targetList: ${targetList}<br>
+        //     targetListId: ${targetList.id}
+        // `;
         if (targetBtn.dataset.targetId == targetList.id) {
             messageToDo.textContent = `operated delToDo`;
             const updateToDos = toDos.filter(toDo => {
