@@ -1,0 +1,169 @@
+/* Root */
+:root {
+    /* color */
+    --bg-color: #48dbfb;
+    --accent-color: #2e86de;
+    --list-color: #54a0ff;
+    --color-black: #222f3e;
+    --color-whtie: white;
+
+    /* border */
+    --border-radius: 1.2rem;
+}
+
+/* Global */
+html {
+    font-size: 62.5%;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Main */
+body {
+    background-color: var(--bg-color);
+}
+
+.bg-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.name_container {
+    margin-top: 8rem;
+    text-align: center;
+}
+
+.first_message {
+    font-size: 3rem;
+}
+
+.form__input {
+    width: 20rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.main_container {
+    width: 40rem;
+    margin: 0 auto;
+    color: var(--color-black);
+    text-align: center;
+}
+
+.title {
+    font-size: 4rem;
+}
+
+.message__greeting_user {
+    font-size: 3rem;
+}
+
+.message__todo_number {
+    font-size: 2rem;
+}
+
+.main_btns {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-add {
+    color: var(--accent-color);
+    font-size: 4rem;
+}
+
+.btn-del-completed_list {
+    width: 32%;
+    height: 3rem;
+    margin-top: 1rem;
+    background-color: #c8d6e5;
+    border-radius: var(--border-radius);
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.lists {
+    padding: 0;
+    font-size: 1.8rem;
+}
+
+.list {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin-bottom: 1.4rem;
+    padding: 1.4rem;
+    background-color: var(--list-color);
+    border-radius: var(--border-radius);
+}
+
+.value {
+    position: absolute;
+    left: 4rem;
+    z-index: 10;
+    text-align: left;
+}
+
+.btn-del {
+    color: var(--color-black);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.modal {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    width: 34rem;
+    height: 10rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    align-content: center;
+}
+
+.btn-cancel {
+    color: var(--color-black);
+    font-size: 2rem;
+}
+
+.modal__input {
+    width: 80%;
+    margin: 2rem 0rem 1rem 0.2rem;
+    padding: 0 1rem;
+    font-size: 1.8rem;
+    box-sizing: border-box;
+}
+
+.modal__btn-submit {
+    color: var(--accent-color);
+    font-size: 3rem;
+}
+
+/* conditions */
+.display-yn {
+    display: none;
+}
+
+.checked_list {
+    background: rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.2);
+}
