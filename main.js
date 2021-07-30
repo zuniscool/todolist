@@ -24,6 +24,7 @@
     function userNameInput() {
         const currentValue = formInput.value;
         localStorage.setItem(USER_NAME_LS, currentValue);
+        initalArrays();
     }
 
     // load 'saved user name' from Local Storage.
@@ -36,7 +37,6 @@
             messageGreeting.textContent = `안녕하세요. ${loadedUserName} 님`;
             nameContainer.classList.add('display-yn');
             mainContainer.classList.remove('display-yn');
-            initalArrays();
         }
     }
 
