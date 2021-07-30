@@ -199,11 +199,11 @@ body {
     }
 
     .btn-del::after {
-        padding: 6px 8px;
+        padding: 4px 8px;
         background-color: var(--color-black);
         border-radius: var(--border-radius);
         color: var(--color-whtie);
-        font-size: 12px;
+        font-size: 10px;
         content: '삭제';
     }
 
