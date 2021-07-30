@@ -65,7 +65,6 @@
     
     // add each todolist for array & save.
     // relate the function 'createList', 'submitToDo'.
-    let targetId = 1;
     function onAdd(value, todosName, array) {
         lists.scrollIntoView({behavior: "smooth", block: "end", inline: "end"});
 
@@ -90,6 +89,7 @@
 
     // list creator
     // relate the function 'onAdd', 'submitToDo'.
+    let targetId = 1;
     function createList(value, target) {
     if (target == 'checkbox') {
         lists.innerHTML += `<li class="list checked_list" id=${targetId}>
@@ -184,6 +184,8 @@
                 .parentNode.id: ${event.target.parentNode.id}<br>
                 .parentNode.className: ${event.target.parentNode.className}<br>
             from checkOrDel`;
+        const targetId1 = event.target.dataset.targetId;
+        const parentId1 = event.target.parentNode.id;
         if (event.path[1].className == 'btn-del') { // click btn-del
             const deleteTarget = event.target;
             const deleteList = deleteTarget.parentNode.parentNode;
@@ -192,7 +194,7 @@
             const checkTarget = event.target;
             const checkList = checkTarget.parentNode;
             deleteToDo(checkTarget, checkList);
-        } else if (event.type == 'click') {
+        } else if (targetId1 == parentId1) {
             const deleteTarget = event.target;
             const deleteList = deleteTarget.parentNode.parentNode;
             deleteToDo(deleteTarget, deleteList);
