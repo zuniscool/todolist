@@ -180,15 +180,16 @@
         const targetId1 = event.target.dataset.targetId;
         const parentId1 = event.target.parentNode.id;
 
-        const title = document.querySelector('.title');
-        title.innerHTML = `target: ${event.target}<br>
-            event: ${event}<br>
-        `;
-
         if (targetId1 == parentId1) {
-            const deleteTarget = event.target;
-            const deleteList = event.target.parentNode;
-            deleteToDo(deleteTarget, deleteList);
+            if (event.taregt.nodeName == 'BUTTON') {
+                const deleteTarget = event.target;
+                const deleteList = event.target.parentNode;
+                deleteToDo(deleteTarget, deleteList);
+            } else if (event.taregt.nodeName == 'I') {
+                const deleteTarget = event.target;
+                const deleteList = event.target.parentNode.parentNode;
+                deleteToDo(deleteTarget, deleteList);
+            }
         }
         // for mobile
 
@@ -212,7 +213,7 @@
             });
             toDos = updateToDos;
             saveToDos(TODOS_LS, toDos);
-            location.reload();
+            // location.reload();
         }
     }
 
