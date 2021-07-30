@@ -172,4 +172,8 @@ body {
     html {
         font-size: 16px;
     }
+
+    .main_container {
+        width: 30rem;
+    }
 }
