@@ -65,6 +65,16 @@ body {
     text-align: center;
 }
 
+.link-github {
+    color: var(--color-black);
+    font-size: 3rem;
+}
+
+.link-github:hover i {
+    transition: all 300ms ease-in;
+    transform: scale(1.1);
+}
+
 .title {
     font-size: 4rem;
 }
@@ -89,6 +99,11 @@ body {
     font-size: 4rem;
 }
 
+.btn-add:hover {
+    transition: all 300ms ease-in;
+    transform: scale(1.1);
+}
+
 .btn-del-completed_list {
     width: 32%;
     height: 3rem;
@@ -97,6 +112,11 @@ body {
     border-radius: var(--border-radius);
     font-size: 1.4rem;
     text-align: center;
+}
+
+.btn-del-completed_list:hover {
+    transition: all 300ms ease-in;
+    transform: scale(1.1);
 }
 
 .lists {
@@ -114,6 +134,11 @@ body {
     border-radius: var(--border-radius);
 }
 
+.checkbox:hover {
+    transition: all 300ms ease-in;
+    transform: scale(1.1);
+}
+
 .value {
     position: absolute;
     left: 4rem;
@@ -125,6 +150,11 @@ body {
     color: var(--color-black);
     font-size: 1.6rem;
     cursor: pointer;
+}
+
+.btn-del:hover {
+    transition: all 300ms ease-in;
+    transform: scale(1.1);
 }
 
 .modal {
@@ -145,6 +175,11 @@ body {
     font-size: 2rem;
 }
 
+.btn-cancel:hover {
+    transition: all 300ms ease-in;
+    transform: scale(1.1);
+}
+
 .modal__input {
     width: 80%;
     margin: 2rem 0rem 1rem 0.2rem;
@@ -156,6 +191,11 @@ body {
 .modal__btn-submit {
     color: var(--accent-color);
     font-size: 3rem;
+}
+
+.modal__btn-submit:hover {
+    transition: all 300ms ease-in;
+    transform: scale(1.1);
 }
 
 /* conditions */
