@@ -1,9 +1,9 @@
 # todolist
 
-##요소 및 버튼 설명
+## 요소 및 버튼 설명
 <img width="1440" alt="스크린샷 2021-07-31 오후 3 11 56" src="https://user-images.githubusercontent.com/76937647/127730778-d308413e-3b35-4f7b-ad0c-e9f4e0bf60df.png">
 <br>
-##기능 Function
+## 기능 Function
 - 사용자 이름을 입력 받고 이름 정보를 저장합니다.
 <img width="1440" alt="스크린샷 2021-07-31 오후 3 07 21" src="https://user-images.githubusercontent.com/76937647/127730580-95c3d97f-192d-4c79-a922-f07d82bd921d.png">버
 <br>
@@ -17,7 +17,7 @@
 - '완료 목록 제거 버튼'을 누르면, 완료 목록을 일괄 제거합니다.
 <br>
 
-##주의 caution
+## 주의 caution
 - 23자를 초과하여 입력할 수 없습니다.
 <img width="450" alt="스크린샷 2021-07-31 오후 3 32 00" src="https://user-images.githubusercontent.com/76937647/127731093-08a96067-1869-4903-b535-c0d0ee1b35cb.png">
 <br>
