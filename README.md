@@ -10,7 +10,7 @@
 * '할 일 완료하기 버튼'을 누르면, 선택된 할 일이 완료 목록으로 이동합니다.
 * '완료 목록 제거 버튼'을 누르면, 완료 목록을 일괄 제거합니다.
 ## 주의 caution
-* 23자를 초과하여 입력할 수 없습니다. <img width="522" alt="스크린샷 2021-07-31 오후 3 32 00" src="https://user-images.githubusercontent.com/76937647/127731093-08a96067-1869-4903-b535-c0d0ee1b35cb.png">
+* 23자를 초과하여 입력할 수 없습니다. 23자 초과시 입력창이 초기화 됩니다. 됩니다.<img width="522" alt="스크린샷 2021-07-31 오후 3 32 00" src="https://user-images.githubusercontent.com/76937647/127731093-08a96067-1869-4903-b535-c0d0ee1b35cb.png">
 * 사용자 이름 정보를 초기화하고 싶다면, 개발자 도구에서 Local Storage에 접근하세요. <img width="522" alt="스크린샷 2021-07-31 오후 3 29 36" src="https://user-images.githubusercontent.com/76937647/127731062-36a501e8-fa1a-4142-9de5-f01810e4ce5a.png">
 <br>
 
