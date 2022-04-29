@@ -164,7 +164,7 @@ body {
     z-index: 100;
     transform: translate(-50%, -50%);
     width: 34rem;
-    height: 100px;
+    height: 200px;
     background-color: white;
     border-radius: var(--border-radius);
     align-content: center;
