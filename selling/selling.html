@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="selling.css">
+    <script src="selling.js" defer></script>
+</head>
+<body>
+    <div class="bg-modal hide"></div>
+    <div class="name_container">
+        <p class="first_message">환영합니다 🎉</p>
+        <form class="form-user_name" action="">
+            <input class="form__input" type="text" placeholder="사용자 이름을 입력하세요.">
+        </form>
+    </div>
+    <div class="main_container hide">
+        <a class="link-github" href="https://github.com/zuniscool/todolist" target="blank">
+            <i class="fab fa-github"></i>
+        </a>
+        <h1 class="title">TO DO LIST ver.beta</h1>
+        <div class="message">
+            <p class="message__greeting_user">
+                <!-- will add user name -->
+            </p>
+            <p class="message__todo_number">
+                <!-- will add message todo number -->
+            </p>
+        </div>
+        <div class="main_btns">
+            <button class="btn-add">
+                <i class="fas fa-plus-circle"></i>
+            </button>
+            <button class="btn-del-completed_list hide">
+                완료된 목록 제거
+            </button>
+        </div>
+        <ul class="lists">
+            <!-- added list position -->
+        </ul>
+        <div class="modal hide">
+            <button class="btn-cancel" type="button">
+                <i class="fas fa-backspace"></i>
+            </button>
+            <input class="modal__input" type="text" placeholder="할 일을 입력하세요.">
+            <button class="modal__btn-submit" type="submit">
+                <i class="fas fa-plus-circle"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

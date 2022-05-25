@@ -164,7 +164,7 @@ body {
     z-index: 100;
     transform: translate(-50%, -50%);
     width: 34rem;
-    height: 200px;
+    height: 100px;
     background-color: white;
     border-radius: var(--border-radius);
     align-content: center;
@@ -199,7 +199,7 @@ body {
 }
 
 /* conditions */
-.display-yn {
+.hide {
     display: none;
 }
 
@@ -208,7 +208,7 @@ body {
     color: rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     html {
         font-size: 12px;
     }
@@ -255,4 +255,4 @@ body {
         width: 24rem;
         height: 12rem;
     }
-}
+} */

@@ -35,8 +35,8 @@
         if (loadedUserName !== null) {
             const messageGreeting = document.querySelector('.message__greeting_user');
             messageGreeting.textContent = `안녕하세요. ${loadedUserName} 님`;
-            nameContainer.classList.add('display-yn');
-            mainContainer.classList.remove('display-yn');
+            nameContainer.classList.add('hide');
+            mainContainer.classList.remove('hide');
         }
     }
 
@@ -57,8 +57,8 @@
         const bgModal = document.querySelector('.bg-modal');
         const modal = document.querySelector('.modal');
         
-        bgModal.classList.toggle('display-yn');
-        modal.classList.toggle('display-yn');
+        bgModal.classList.toggle('hide');
+        modal.classList.toggle('hide');
     
         input.focus();
     }
@@ -167,9 +167,9 @@
         }
 
         if (loadedToDos2 !== '[]') {
-            document.querySelector('.btn-del-completed_list').classList.remove('display-yn');
+            document.querySelector('.btn-del-completed_list').classList.remove('hide');
         } else {
-            document.querySelector('.btn-del-completed_list').classList.add('display-yn');
+            document.querySelector('.btn-del-completed_list').classList.add('hide');
         }
     }
     
