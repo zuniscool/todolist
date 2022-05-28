@@ -12,16 +12,16 @@ request.send(); // send() 메서드로 요청 보냄
 request.onload = function() {
   // response 프로퍼티를 사용하여, json 데이터에 기반한 js 객체를 변수에 저장함
   const pokemonList = request.response;
-
   const list = document.querySelector('ul.wrap_list');
   const searchInput = document.querySelector('input.searchbar');
   const searchBtn = document.querySelector('button.btn_search');
   const totalBtn = document.querySelector('button.btn_total');
+  let pokemon = '';
 
   // fn) 리스트 생성
   function createElement(idx) {
     const li = document.createElement('li');
-    const pokemon = pokemonList[idx];
+    pokemon = pokemonList[idx];
 
     li.innerHTML = `
       <img src='${pokemon.url}' alt='${pokemon.name}'>
@@ -30,6 +30,7 @@ request.onload = function() {
   
     list.appendChild(li);
   }
+  // 끝 fn) 리스트 생성
 
   // fn) 전체 리스트 보여주기
   function showTotalList() {
@@ -40,6 +41,7 @@ request.onload = function() {
       createElement(i);
     }
   }
+  // 끝 fn) 전체 리스트 보여주기
 
   // fn) 검색어 검증
   function showList(txt) {
@@ -47,7 +49,7 @@ request.onload = function() {
   
     if(txt !== '') {
       for (let i = 0; i < pokemonList.length; i++) {
-        const pokemon = pokemonList[i];
+        pokemon = pokemonList[i];
 
         if(pokemon.name.includes(txt)) {
           createElement(i);
@@ -55,6 +57,7 @@ request.onload = function() {
       }
     } else alert('포켓몬 이름을 입력하세요.');
   }
+  // 끝 fn) 검색어 검증
   
   // fn) 검색 이벤트 실행
   function executeEvent() {
@@ -72,6 +75,7 @@ request.onload = function() {
       showTotalList();
     })
   }
+  // 끝 fn) 검색 이벤트 실행
 
   function init() {
     executeEvent();
