@@ -16,17 +16,15 @@ request.onload = function() {
   const searchInput = document.querySelector('input.searchbar');
   const searchBtn = document.querySelector('button.btn_search');
   const totalBtn = document.querySelector('button.btn_total');
-  let pokemon = '';
 
 
   // fn) 리스트 생성
-  function createElement(idx) {
+  function createElement(element) {
     const li = document.createElement('li');
-    pokemon = pokemonList[idx];
 
     li.innerHTML = `
-      <img src='${pokemon.url}' alt='${pokemon.name}'>
-      <br/><span class='txt_name'>${pokemon.name}</span>
+      <img src='${element.url}' alt='${element.name}'>
+      <br/><span class='txt_name'>${element.name}</span>
     `
   
     list.appendChild(li);
@@ -40,7 +38,7 @@ request.onload = function() {
 
     let i = 0;
     for (i; i < pokemonList.length; i++) {
-      createElement(i);
+      createElement(pokemonList[i]);
     }
   }
   // 끝 fn) 전체 리스트 보여주기
@@ -52,10 +50,10 @@ request.onload = function() {
   
     if(txt !== '') {
       for (let i = 0; i < pokemonList.length; i++) {
-        pokemon = pokemonList[i];
+        const pokemon = pokemonList[i];
 
         if(pokemon.name.includes(txt)) {
-          createElement(i);
+          createElement(pokemon);
         }
       }
     } else alert('포켓몬 이름을 입력하세요.');
