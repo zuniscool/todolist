@@ -1,20 +1,12 @@
 'use strict'
 
-// json url 가져오는 변수
-const requestURL = './data/pokemonList.json';
+const requestURL = './data/pokemonList.json'; // json url 가져오는 변수
+const request = new XMLHttpRequest(); // 요청을 만들기 위해, XMLHttpRequest 생성자로부터 새로운 request 인스턴스 생성
+request.open('GET', requestURL); // open() 메서드로 새로운 요청 생성함
 
-// 요청을 만들기 위해, XMLHttpRequest 생성자로부터 새로운 request 인스턴스 생성
-const request = new XMLHttpRequest();
-
-// open() 메서드로 새로운 요청 생성함
-request.open('GET', requestURL);
-
-// responseType을 json으로 설정함
-// XHR로 하여금 서버가 json 데이터를 반환할 것이며, js 객체로 변환될 것이라는 걸 명시함
+// responseType을 json으로 설정함 : XHR로 하여금 서버가 json 데이터를 반환할 것이며, js 객체로 변환될 것이라는 걸 명시함
 request.responseType = 'json';
-
-// send() 메서드로 요청 보냄
-request.send();
+request.send(); // send() 메서드로 요청 보냄
 
 // request.onload 로 서버의 응답을 기다린 후 함수 실행함
 request.onload = function() {
