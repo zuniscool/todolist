@@ -16,7 +16,7 @@ request.onload = function() {
   const searchInput = document.querySelector('input.searchbar');
 
 
-  // fn) 리스트 생성
+  // fn) 리스트 생성기
   function createElement(element) {
     const li = document.createElement('li');
 
@@ -66,8 +66,8 @@ request.onload = function() {
       }
     })
   }
-  // 끝 fn) 검색 이벤트 실행
-  
+  // 끝 n) 검색 이벤트 실행
+
 
   function init() {
     executeEvent();
