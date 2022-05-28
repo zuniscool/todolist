@@ -18,6 +18,7 @@ request.onload = function() {
   const totalBtn = document.querySelector('button.btn_total');
   let pokemon = '';
 
+
   // fn) 리스트 생성
   function createElement(idx) {
     const li = document.createElement('li');
@@ -32,6 +33,7 @@ request.onload = function() {
   }
   // 끝 fn) 리스트 생성
 
+
   // fn) 전체 리스트 보여주기
   function showTotalList() {
     list.innerHTML = '';
@@ -42,6 +44,7 @@ request.onload = function() {
     }
   }
   // 끝 fn) 전체 리스트 보여주기
+
 
   // fn) 검색어 검증
   function showList(txt) {
@@ -58,6 +61,7 @@ request.onload = function() {
     } else alert('포켓몬 이름을 입력하세요.');
   }
   // 끝 fn) 검색어 검증
+
   
   // fn) 검색 이벤트 실행
   function executeEvent() {
@@ -76,6 +80,7 @@ request.onload = function() {
     })
   }
   // 끝 fn) 검색 이벤트 실행
+  
 
   function init() {
     executeEvent();
