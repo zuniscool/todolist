@@ -21,29 +21,46 @@ request.onload = function() {
   // response 프로퍼티를 사용하여, json 데이터에 기반한 js 객체를 변수에 저장함
   const pokemonList = request.response;
 
-  const list = document.querySelector('.wrap_list');
-  const searchInput = document.querySelector('.searchbar');
-  const searchBtn = document.querySelector('.btn_search');
+  const list = document.querySelector('ul.wrap_list');
+  const searchInput = document.querySelector('input.searchbar');
+  const searchBtn = document.querySelector('button.btn_search');
+  const totalBtn = document.querySelector('button.btn_total');
+
+  // li 요소를 생성하여, list(ul.wrap_list)에 자식으로 추가
+  function createElement(idx) {
+    const li = document.createElement('li');
+    const pokemon = pokemonList[idx];
+
+    // li에 포켓몬 정보를 담아,
+    li.innerHTML = `
+      <img src='${pokemon.url}' alt='${pokemon.name}'>
+      <br/><span class='txt_name'>${pokemon.name}</span>
+    `
+  
+    // list(ul.wrap_list)에 자식 요소(li) 추가
+    list.appendChild(li);
+  }
+
+  function showTotalList() {
+    list.innerHTML = ''; // 검색 후 담겨진 리스트를 초기화
+
+    let i = 0;
+    for (i; i < pokemonList.length; i++) {
+      createElement(i);
+    }
+  }
 
   function showList(txt) {
-    list.innerHTML = '';
+    list.innerHTML = ''; // 검색 후 담겨진 리스트를 초기화
   
     // txt가 빈 값이 아니면, for문으로 pokemonList 순회함
     if(txt !== '') {
       for (let i = 0; i < pokemonList.length; i++) {
-        const li = document.createElement('li');
         const pokemon = pokemonList[i];
-  
+
         // pokemon.name이 txt를 포함하면,
         if(pokemon.name.includes(txt)) {
-          // li에 포켓몬 정보를 담아,
-          li.innerHTML = `
-            <img src='${pokemon.url}' alt='${pokemon.name}'>
-            <br/><span class='txt_name'>${pokemon.name}</span>
-          `
-  
-          // list(ul.wrap_list)에 자식 요소(li) 추가
-          list.appendChild(li);
+          createElement(i);
         }
       }
     } else alert('포켓몬 이름을 입력하세요.'); // pokemon.name이 txt를 포함하지 않으면 경고창 띄움
@@ -51,11 +68,18 @@ request.onload = function() {
   
   // 검색 이벤트 실행
   function executeEvent() {
+
     // searchBtn(검색)으로 포켓몬 검색하기
     searchBtn.addEventListener('click', (e) => {
       e.preventDefault(); // 기본 이벤트 방지
       const txt = searchInput.value; // input.searchbar에 들어온 value를 fn)showList로 전달
       showList(txt);
+    })
+
+    // 전체 리스트 보기
+    totalBtn.addEventListener('click', (e) => {
+      e.preventDefault(); // 기본 이벤트 방지
+      showTotalList();
     })
   }
 
