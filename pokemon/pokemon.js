@@ -49,10 +49,19 @@ request.onload = function() {
     } else alert('포켓몬 이름을 입력하세요.'); // pokemon.name이 txt를 포함하지 않으면 경고창 띄움
   }
   
-  // searchBtn(검색)으로 포켓몬 검색하기
-  searchBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // 기본 이벤트 방지
-    const txt = searchInput.value;
-    showList(txt);
-  })
+  // 검색 이벤트 실행
+  function executeEvent() {
+    // searchBtn(검색)으로 포켓몬 검색하기
+    searchBtn.addEventListener('click', (e) => {
+      e.preventDefault(); // 기본 이벤트 방지
+      const txt = searchInput.value; // input.searchbar에 들어온 value를 fn)showList로 전달
+      showList(txt);
+    })
+  }
+
+  function init() {
+    executeEvent();
+  }
+
+  init();
 }
