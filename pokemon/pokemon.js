@@ -14,8 +14,6 @@ request.onload = function() {
   const pokemonList = request.response;
   const list = document.querySelector('ul.wrap_list');
   const searchInput = document.querySelector('input.searchbar');
-  const searchBtn = document.querySelector('button.btn_search');
-  const totalBtn = document.querySelector('button.btn_total');
 
 
   // fn) 리스트 생성
@@ -32,49 +30,40 @@ request.onload = function() {
   // 끝 fn) 리스트 생성
 
 
-  // fn) 전체 리스트 보여주기
-  function showTotalList() {
-    list.innerHTML = '';
-
-    let i = 0;
-    for (i; i < pokemonList.length; i++) {
-      createElement(pokemonList[i]);
-    }
-  }
-  // 끝 fn) 전체 리스트 보여주기
-
 
   // fn) 검색어 검증
-  function showList(txt) {
+  function showList(btnName, txt) {
     list.innerHTML = ''; // 검색 후 담겨진 리스트를 초기화
-  
-    if(txt !== '') {
-      for (let i = 0; i < pokemonList.length; i++) {
-        const pokemon = pokemonList[i];
+    let i = 0;
 
-        if(pokemon.name.includes(txt)) {
-          createElement(pokemon);
+    if(txt !== '' && btnName === 'btn_search') {
+      for (i; i < pokemonList.length; i++) {
+        if(pokemonList[i].name.includes(txt)) {
+          createElement(pokemonList[i]);
         }
+      }
+    } else if (btnName === 'btn_total') {
+      for (i; i < pokemonList.length; i++) {
+        createElement(pokemonList[i]);
       }
     } else alert('포켓몬 이름을 입력하세요.');
   }
   // 끝 fn) 검색어 검증
 
   
-  // fn) 검색 이벤트 실행
+  // fn) 검색 이벤트 실행 : 버튼에 맞는 이벤트 실행
   function executeEvent() {
-
-    // 포켓몬 이름 검색하기
-    searchBtn.addEventListener('click', (e) => {
+    document.addEventListener('click', (e) => {
       e.preventDefault();
-      const txt = searchInput.value;
-      showList(txt);
-    })
+      
+      const btnName = e.target.className;
 
-    // 전체 리스트 보기
-    totalBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      showTotalList();
+      if (btnName === 'btn_search') {
+        const txt = searchInput.value;
+        showList(btnName, txt);
+      } else if (btnName === 'btn_total') {
+        showList(btnName);
+      }
     })
   }
   // 끝 fn) 검색 이벤트 실행
